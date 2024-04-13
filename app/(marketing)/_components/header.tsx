@@ -1,5 +1,5 @@
+import Loader from "@/components/loader";
 import { Button } from "@/components/ui/button";
-import Loader from "@/components/ui/loader";
 import {
   ClerkLoaded,
   ClerkLoading,
