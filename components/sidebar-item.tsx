@@ -23,8 +23,15 @@ export default function SidebarItem({ label, icon, href }: Props) {
       variant={active ? "sidebarOutline" : "sidebar"}
     >
       <Link href={href}>
-        <Image src={icon} alt={label} width={32} height={32} className="mr-5" />
-        {label}
+        <Image
+          src={icon}
+          draggable={false}
+          alt={label}
+          width={32}
+          height={32}
+          className="mr-5 select-none"
+        />
+        <p className="select-none">{label}</p>
       </Link>
     </Button>
   );
