@@ -27,7 +27,7 @@ export const getCourses = cache(async () => {
   return data;
 });
 
-export const getCouseById = cache(async (couseId: number) => {
+export const getCourseById = cache(async (couseId: number) => {
   const data = await db.query.courses.findFirst({
     where: eq(courses.id, couseId),
     //populate units and lessons
