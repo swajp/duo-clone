@@ -1,5 +1,7 @@
 WIP
 ![image](https://github.com/swajp/penguino/assets/65676574/2c1d83ee-bd50-4f45-9562-f49eec713ce2)
+![image](https://github.com/swajp/penguino/assets/65676574/38a23f53-9898-47a6-8c59-f20d441c534e)
+
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
