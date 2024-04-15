@@ -46,7 +46,7 @@ const main = async () => {
     await db.insert(schema.units).values([
       {
         id: 1,
-        courseId: 1,
+        courseId: 1, // Spanish
         title: "Unit 1",
         description: "Learn the basics of Spanish",
         order: 1,
@@ -56,102 +56,135 @@ const main = async () => {
     await db.insert(schema.lessons).values([
       {
         id: 1,
-        unitId: 1, // Spanish Unit 1
-        title: "Nouns",
+        unitId: 1, // Unit 1 (Learn the basics...)
         order: 1,
+        title: "Nouns",
       },
       {
         id: 2,
-        unitId: 1, // Spanish Unit 1
-        title: "Numbers",
+        unitId: 1, // Unit 1 (Learn the basics...)
         order: 2,
+        title: "Verbs",
       },
       {
         id: 3,
-        unitId: 1, // Spanish Unit 1
-        title: "Verbs",
+        unitId: 1, // Unit 1 (Learn the basics...)
         order: 3,
+        title: "Verbs",
+      },
+      {
+        id: 4,
+        unitId: 1, // Unit 1 (Learn the basics...)
+        order: 4,
+        title: "Verbs",
+      },
+      {
+        id: 5,
+        unitId: 1, // Unit 1 (Learn the basics...)
+        order: 5,
+        title: "Verbs",
       },
     ]);
 
     await db.insert(schema.challenges).values([
       {
         id: 1,
-        lessonId: 1, // Spanish Nouns
+        lessonId: 1, // Nouns
         type: "SELECT",
-        question: 'Which one of these is the "the man"?',
         order: 1,
+        question: 'Which one of these is the "the man"?',
       },
       {
         id: 2,
-        lessonId: 2, // Spanish Numbers
-        type: "SELECT",
-        question: "Which one of these is the number 1?",
-        order: 1,
+        lessonId: 1, // Nouns
+        type: "ASSIST",
+        order: 2,
+        question: '"the man"',
       },
       {
         id: 3,
-        lessonId: 3, // Spanish Verbs
+        lessonId: 1, // Nouns
         type: "SELECT",
-        question: 'Which one of these is the verb "to eat"',
-        order: 1,
+        order: 3,
+        question: 'Which one of these is the "the robot"?',
       },
     ]);
 
     await db.insert(schema.challengeOptions).values([
       {
-        id: 1,
-        challengeId: 1, // Spanish Nouns
-        text: "el hombre",
+        challengeId: 1, // Which one of these is "the man"?
         correct: true,
+        text: "el hombre",
       },
       {
-        id: 2,
-        challengeId: 1, // Spanish Nouns
+        challengeId: 1,
+        correct: false,
         text: "la mujer",
-        correct: false,
       },
       {
-        id: 3,
-        challengeId: 1, // Spanish Nouns
-        text: "el niño",
+        challengeId: 1,
         correct: false,
+        text: "el robot",
       },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 2, // "the man"?
+        correct: true,
+        text: "el hombre",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "la mujer",
+      },
+      {
+        challengeId: 2,
+        correct: false,
+        text: "el robot",
+      },
+    ]);
+
+    await db.insert(schema.challengeOptions).values([
+      {
+        challengeId: 3, // Which one of these is the "the robot"?
+        correct: false,
+        text: "el hombre",
+      },
+      {
+        challengeId: 3,
+        correct: false,
+        text: "la mujer",
+      },
+      {
+        challengeId: 3,
+        correct: true,
+        text: "el robot",
+      },
+    ]);
+
+    await db.insert(schema.challenges).values([
       {
         id: 4,
-        challengeId: 2, // Spanish Numbers
-        text: "uno",
-        correct: true,
+        lessonId: 2, // Verbs
+        type: "SELECT",
+        order: 1,
+        question: 'Which one of these is the "the man"?',
       },
       {
         id: 5,
-        challengeId: 2, // Spanish Numbers
-        text: "dos",
-        correct: false,
+        lessonId: 2, // Verbs
+        type: "ASSIST",
+        order: 2,
+        question: '"the man"',
       },
       {
         id: 6,
-        challengeId: 2, // Spanish Numbers
-        text: "tres",
-        correct: false,
-      },
-      {
-        id: 7,
-        challengeId: 3, // Spanish Verbs
-        text: "comer",
-        correct: true,
-      },
-      {
-        id: 8,
-        challengeId: 3, // Spanish Verbs
-        text: "beber",
-        correct: false,
-      },
-      {
-        id: 9,
-        challengeId: 3, // Spanish Verbs
-        text: "dormir",
-        correct: false,
+        lessonId: 2, // Verbs
+        type: "SELECT",
+        order: 3,
+        question: 'Which one of these is the "the robot"?',
       },
     ]);
 
